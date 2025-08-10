@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>متتبع المسلسلات (داكن)</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>متتبع المسلسلات</h1>
+    <button id="addBtn" title="أضف مسلسل">+</button>
+  </header>
+
+  <main>
+    <div id="searchWrap">
+      <input id="search" placeholder="ابحث عن مسلسل..." />
+    </div>
+
+    <ul id="list"></ul>
+  </main>
+
+  <!-- Add / Edit Modal -->
+  <div id="modal" class="hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h2 id="modalTitle">أضف مسلسل</h2>
+      <label>اسم المسلسل
+        <input id="name" />
+      </label>
+      <label>الموسم
+        <input id="season" type="number" min="1" value="1"/>
+      </label>
+      <label>الحلقة
+        <input id="episode" type="number" min="1" value="1"/>
+      </label>
+      <label>الدقيقة
+        <input id="minute" type="number" min="0" value="0"/>
+      </label>
+      <label>الثانية
+        <input id="second" type="number" min="0" max="59" value="0"/>
+      </label>
+      <label>المصدر (اختياري)
+        <input id="source" placeholder="مثال: watchsite.com"/>
+      </label>
+      <div class="modal-actions">
+        <button id="saveBtn">حفظ</button>
+        <button id="cancelBtn">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
